@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US Meta Cross-Funnel A/B Test · Qianhui Huang</title>
+  <meta name="description" content="A standardized readout of a cross-funnel Meta A/B test: hypothesis, validity, effect, attribution, heterogeneity, and decision. Synthetic training data.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23B9D9EB'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='15' text-anchor='middle' fill='%2312294A'%3EQH%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#hypothesis">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Qianhui Huang</a>
+      <nav aria-label="Site">
+        <ul>
+          <li><a href="../index.html#education">Education</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../portfolio.html" aria-current="true">Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="wrap">
+        <p class="crumbs"><a href="../portfolio.html">Portfolio</a> / Experiment readout</p>
+        <h1>US Meta Cross-Funnel A/B Test</h1>
+        <p class="lede">Does adding Mid-Funnel Engager Retargeting on top of business-as-usual Lower-Funnel Prospecting improve conversion efficiency, without hurting new-buyer quality? A standardized readout, from hypothesis through to a launch decision.</p>
+        <ul class="tags">
+          <li>Market: US</li>
+          <li>Design: 50/50 user split</li>
+          <li>Hypothesis · Validity · Effect · Attribution · Heterogeneity · Decision</li>
+        </ul>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <p class="callout"><strong>About the data:</strong> every number on this page comes from a synthetic training workbook (Cross_Funnel_AB_Test_Synthetic_Raw_Data.xlsx). It is not real company experiment data and doesn’t represent a real business decision. The workbook’s two datasets, Campaign_Daily_Raw and User_AB_Simulation, were built independently at different levels of granularity, so they can’t be combined for statistical inference.</p>
+      </div>
+    </section>
+
+    <section id="hypothesis" class="band-tint">
+      <div class="wrap section-grid">
+        <div class="side">
+          <h2><span class="num">01</span>Hypothesis</h2>
+        </div>
+        <div class="main prose">
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr><th scope="row">Control / Cell A</th><td>BAU Lower-Funnel (LF) Prospecting, with no added Mid-Funnel (MF) Retargeting</td></tr>
+                <tr><th scope="row">Treatment / Cell B</th><td>BAU LF Prospecting + MF Engager Retargeting</td></tr>
+                <tr><th scope="row">Split</th><td>Designed as a user-level 50/50 random split, observed daily at campaign level</td></tr>
+                <tr><th scope="row">Primary metrics</th><td>GMV and GMV/Cost. Secondary: CTR, CPC, and CVR (BI/Clicks)</td></tr>
+                <tr><th scope="row">Quality guardrail</th><td>DNC Share = DNC / All users, to check for a trade-off in new-buyer value</td></tr>
+                <tr><th scope="row">Hypothesis</th><td>H1: Treatment GMV/Cost is higher than Control. H0: there is no difference between the groups.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="callout"><strong>Decision prerequisite:</strong> both groups must use comparable attribution windows, product scope, budgets, and event definitions, and the user-level split should be verified from platform logs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="validity">
+      <div class="wrap section-grid">
+        <div class="side">
+          <h2><span class="num">02</span>Validity</h2>
+        </div>
+        <div class="main prose">
+          <p>A 50/50 user split is the intended randomization, but campaign summary tables alone can’t prove that assignment was mutually exclusive, that users were balanced, or that no one was exposed to both groups. The original experiment had no A/A test, and this training version doesn’t include assignment logs, user identity matching, or pre-experiment covariates.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Check</th><th scope="col">Observation</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Campaign impressions</th><td>A: 24,523,214; B: 24,101,954; a −1.7% difference. This isn’t a user-count balance check.</td></tr>
+                <tr><th scope="row">Spend</th><td>A: $51,659; B: $50,489; a −2.3% difference</td></tr>
+                <tr><th scope="row">Contamination</th><td>Needs checks for cross-group exposure, MF/LF overlap, retargeting in other channels, audience refreshes, and attribution crossover</td></tr>
+                <tr><th scope="row">Learning period</th><td>Use a pre-specified mature window for the primary analysis, rather than picking the best dates after the fact</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="callout"><strong>Verdict:</strong> the data supports a descriptive comparison, but isn’t yet enough to confirm that the campaign-level GMV lift is statistically significant or causal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="effect" class="band-tint">
+      <div class="wrap section-grid">
+        <div class="side">
+          <h2><span class="num">03</span>Effect</h2>
+        </div>
+        <div class="main prose">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Metric</th><th scope="col" class="num-col">Control A</th><th scope="col" class="num-col">Treatment B</th><th scope="col" class="num-col">B vs A</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Spend</th><td class="num-col">$51,659</td><td class="num-col">$50,489</td><td class="num-col">−2.3%</td></tr>
+                <tr><th scope="row">Impressions</th><td class="num-col">24,523,214</td><td class="num-col">24,101,954</td><td class="num-col">−1.7%</td></tr>
+                <tr><th scope="row">Clicks</th><td class="num-col">284,285</td><td class="num-col">345,782</td><td class="num-col">+21.6%</td></tr>
+                <tr><th scope="row">BI</th><td class="num-col">2,224</td><td class="num-col">2,952</td><td class="num-col">+32.7%</td></tr>
+                <tr><th scope="row">GMV</th><td class="num-col">$195,531</td><td class="num-col">$241,197</td><td class="num-col">+23.4%</td></tr>
+                <tr><th scope="row">GMV / Cost</th><td class="num-col">3.79x</td><td class="num-col">4.78x</td><td class="num-col">+26.2%</td></tr>
+                <tr><th scope="row">CTR</th><td class="num-col">1.16%</td><td class="num-col">1.43%</td><td class="num-col">+23.8%</td></tr>
+                <tr><th scope="row">CPC</th><td class="num-col">$0.182</td><td class="num-col">$0.146</td><td class="num-col">−19.6%</td></tr>
+                <tr><th scope="row">CVR</th><td class="num-col">0.78%</td><td class="num-col">0.85%</td><td class="num-col">+9.1%</td></tr>
+                <tr><th scope="row">DNC Share</th><td class="num-col">42.85%</td><td class="num-col">37.16%</td><td class="num-col">−13.3%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Treatment raised GMV and GMV/Cost, improved CTR and CVR, and lowered CPC, but DNC Share fell. All of these are descriptive.</p>
+
+          <h3>User-level statistics exercise</h3>
+          <p>A separate simulated sample of 8,000 users, split evenly between the groups:</p>
+          <dl class="facts">
+            <div class="fact"><dt>Control conversion</dt><dd>10.22%</dd></div>
+            <div class="fact"><dt>Treatment conversion</dt><dd>12.80%</dd></div>
+            <div class="fact"><dt>Absolute lift</dt><dd>+2.575 pp</dd></div>
+            <div class="fact"><dt>Relative lift</dt><dd>+25.2%</dd></div>
+            <div class="fact"><dt>z (two-proportion test)</dt><dd>3.608</dd></div>
+            <div class="fact"><dt>Two-sided p</dt><dd>0.00031</dd></div>
+          </dl>
+          <ul class="bullets">
+            <li>Control: 4,000 users and 409 conversions. Treatment: 4,000 users and 512 conversions.</li>
+            <li>Pooled proportion: (409 + 512) / 8,000 = 0.11513. Unpooled standard error: 0.00713.</li>
+            <li>95% confidence interval for the absolute difference: [1.18, 3.97] percentage points.</li>
+          </ul>
+          <p class="callout"><strong>Interpretation:</strong> the simulated conversion difference is significant at the conventional 5% level. It can’t be used to show that the campaign-level GMV/Cost lift above is significant.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="attribution">
+      <div class="wrap section-grid">
+        <div class="side">
+          <h2><span class="num">04</span>Attribution</h2>
+        </div>
+        <div class="main prose">
+          <p>GMV here is attributed transaction value under a set measurement definition. “Treatment has higher attributed efficiency” isn’t the same as “MF exposure created the same amount of incremental value on its own.” The experiment compares the overall effect of adding MF Retargeting as a strategy package, not the standalone contribution of a single MF touchpoint.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Question</th><th scope="col">Current evidence and what’s needed</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Click / view attribution</th><td>The training table has no click/view split. The window needs to be fixed and documented, for example 1-day click / 0-day view.</td></tr>
+                <tr><th scope="row">Conversion lag</th><td>Read results after a mature conversion window, so Treatment and Control are backfilled to the same point</td></tr>
+                <tr><th scope="row">MF–LF overlap</th><td>The source case stresses cross-funnel reach overlap, but the training table has no user-level exposure paths</td></tr>
+                <tr><th scope="row">Incrementality</th><td>Requires valid randomization and independent measurement. Attributed GMV can’t be called causal GMV.</td></tr>
+                <tr><th scope="row">DNC quality</th><td>Cell B’s absolute DNC rose while DNC Share fell, so volume and mix need to be read separately</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="heterogeneity" class="band-tint">
+      <div class="wrap section-grid">
+        <div class="side">
+          <h2><span class="num">05</span>Heterogeneity</h2>
+        </div>
+        <div class="main prose">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th scope="col">Segment</th><th scope="col" class="num-col">GMV lift</th><th scope="col" class="num-col">Efficiency lift</th><th scope="col" class="num-col">ROAS A → B</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Men / Home</th><td class="num-col">−18.4%</td><td class="num-col">−24.7%</td><td class="num-col">3.82x → 2.88x</td></tr>
+                <tr><th scope="row">Men / Search</th><td class="num-col">+41.1%</td><td class="num-col">+42.8%</td><td class="num-col">3.53x → 5.04x</td></tr>
+                <tr><th scope="row">Women / Home</th><td class="num-col">+127.0%</td><td class="num-col">+112.0%</td><td class="num-col">4.23x → 8.97x</td></tr>
+                <tr><th scope="row">Women / Search</th><td class="num-col">−16.5%</td><td class="num-col">−8.6%</td><td class="num-col">3.87x → 3.53x</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="bullets">
+            <li><strong>Read:</strong> Women / Home improved sharply and Men / Search improved, while Men / Home and Women / Search moved the other way. The gain isn’t spread evenly, so the overall average alone shouldn’t drive scaling every placement at once.</li>
+            <li><strong>Scope:</strong> these core segments exclude PNA, which stays in the training data to practice keeping scope consistent. Segment results are exploratory: with multiple comparisons and limited sample sizes, no single segment difference can be called significant yet.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="decision">
+      <div class="wrap section-grid">
+        <div class="side">
+          <h2><span class="num">06</span>Decision</h2>
+        </div>
+        <div class="main prose">
+          <p><span class="badge">Conditional iterate</span></p>
+          <p>Keep testing under clear conditions. This training data alone doesn’t justify a full launch.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Priority</th><th scope="col">Action</th><th scope="col">Go condition</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">P0</th><td>Verify assignment logs, exposure exclusivity, SRM, attribution windows, and conversion backfill</td><td>Randomization is confirmed valid and primary-metric definitions are consistent</td></tr>
+                <tr><th scope="row">P1</th><td>Extend or repeat the experiment, pre-registering the primary metric, MDE, power, and guardrails</td><td>An interpretable effect interval for GMV/Cost</td></tr>
+                <tr><th scope="row">P1</th><td>Review the drop in DNC Share and the change in absolute new-buyer volume</td><td>The quality guardrail shows no unacceptable loss</td></tr>
+                <tr><th scope="row">P2</th><td>Run targeted re-tests in Women / Home and Men / Search</td><td>Heterogeneity is independently validated before any partial scale-up</td></tr>
+                <tr><th scope="row">P2</th><td>Add MF → LF path-to-purchase and conversion-overlap analysis</td><td>A clear boundary between attributed touchpoints and strategy incrementality</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="callout"><strong>Summary:</strong> the synthetic data suggests BAU + MF Retargeting delivers higher attributed efficiency, but with a weaker new-buyer mix and diverging segment results. Validate the experiment and the attribution definitions first, then consider a phased rollout.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-tint">
+      <div class="wrap pager">
+        <a class="card-link" href="../portfolio.html">← Back to portfolio</a>
+        <a class="card-link" href="marketing-performance-analytics.html">Next: Marketing Performance Analytics →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Qianhui Huang</div>
+  </footer>
+</body>
+</html>

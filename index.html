@@ -4,360 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Qianhui Huang</title>
-  <meta name="description" content="Qianhui Huang: Master of Science in Marketing Science student at Columbia Business School.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23B9D9EB'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='15' text-anchor='middle' fill='%23111111'%3EQH%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Qianhui Huang: Master of Science in Marketing Science student at Columbia Business School, focused on marketing analytics.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23B9D9EB'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='15' text-anchor='middle' fill='%2312294A'%3EQH%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      color-scheme: light;
-      --columbia: #B9D9EB;
-      --tint: #F2F7FA;
-      --navy: #12294A;
-      --text: #1F2A37;
-      --muted: #566273;
-      --line: #DCE5EB;
-      --white: #FFFFFF;
-      --serif: "Newsreader", Georgia, "Times New Roman", serif;
-      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      --nav-height: 64px;
-      --gutter: 40px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: calc(var(--nav-height) + 24px);
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      margin: 0;
-      background: var(--white);
-      color: var(--text);
-      font: 400 1rem/1.6 var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; }
-    a:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
-    h1, h2, h3, p, ul { margin: 0; }
-    ul { padding: 0; list-style: none; }
-    img { display: block; max-width: 100%; }
-
-    .wrap {
-      width: min(1200px, 100%);
-      margin-inline: auto;
-      padding-inline: var(--gutter);
-    }
-
-    .skip {
-      position: absolute;
-      left: 16px;
-      top: -60px;
-      z-index: 20;
-      padding: 8px 14px;
-      background: var(--navy);
-      color: var(--white);
-    }
-    .skip:focus { top: 12px; }
-
-    /* Navigation */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: var(--nav-height);
-    }
-
-    .brand {
-      color: var(--navy);
-      font: 500 1.3rem/1 var(--serif);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .nav ul { display: flex; gap: 32px; }
-
-    .nav li a {
-      color: var(--navy);
-      font-size: .92rem;
-      font-weight: 500;
-      text-decoration: none;
-      text-decoration-color: var(--columbia);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 7px;
-      white-space: nowrap;
-    }
-
-    .nav li a:hover { text-decoration-line: underline; }
-
-    /* Intro: text beside a full-height portrait */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      min-height: min(calc(100vh - var(--nav-height)), 720px);
-    }
-
-    .hero-text {
-      align-self: center;
-      padding-block: 64px;
-      padding-right: 64px;
-      padding-left: max(var(--gutter), calc((100vw - 1200px) / 2 + var(--gutter)));
-    }
-
-    .hero h1 {
-      color: var(--navy);
-      font: 400 clamp(3rem, 5.6vw, 4.75rem)/1.05 var(--serif);
-      letter-spacing: -.015em;
-    }
-
-    .hero h1::after {
-      content: "";
-      display: block;
-      width: 64px;
-      height: 3px;
-      margin-top: 28px;
-      background: var(--columbia);
-    }
-
-    .lede {
-      max-width: 33em;
-      margin-top: 28px;
-      font-size: 1.14rem;
-      line-height: 1.6;
-    }
-
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 32px;
-    }
-
-    .contact a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      padding: 8px 18px;
-      border: 1px solid var(--navy);
-      border-radius: 3px;
-      color: var(--navy);
-      font-size: .92rem;
-      font-weight: 500;
-      overflow-wrap: anywhere;
-      text-decoration: none;
-      transition: background-color .15s ease, color .15s ease;
-    }
-
-    .contact a:hover,
-    .contact a.primary { background: var(--navy); color: var(--white); }
-    .contact a.primary:hover { background: var(--white); color: var(--navy); }
-
-    .hero-photo { position: relative; background: var(--columbia); }
-
-    .portrait {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center bottom;
-    }
-
-    /* Sections: title on the left, content on the right */
-    section { padding-block: 88px; }
-    #experience { background: var(--tint); }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: 230px minmax(0, 1fr);
-      gap: 56px;
-    }
-
-    .side { align-self: start; }
-    #experience .side { position: sticky; top: calc(var(--nav-height) + 24px); }
-
-    h2 {
-      padding-top: 16px;
-      border-top: 3px solid var(--navy);
-      color: var(--navy);
-      font: 400 2.1rem/1.15 var(--serif);
-      letter-spacing: -.01em;
-    }
-
-    /* Entries */
-    .card {
-      padding: 32px;
-      background: var(--tint);
-      border-radius: 4px;
-    }
-
-    #experience .card {
-      background: var(--white);
-      border: 1px solid var(--line);
-    }
-
-    .card + .card { margin-top: 20px; }
-
-    .card-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 2px 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .org {
-      color: var(--navy);
-      font: 500 1.55rem/1.25 var(--serif);
-    }
-
-    .org small {
-      font: 400 .9rem/1.4 var(--sans);
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .role { grid-column: 1; font-weight: 600; line-height: 1.45; }
-
-    .meta {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.5;
-      text-align: right;
-      white-space: pre-line;
-    }
-
-    .details > div,
-    .points li,
-    .extras > div {
-      display: grid;
-      grid-template-columns: 170px minmax(0, 1fr);
-      gap: 24px;
-      padding-block: 14px;
-      font-size: .97rem;
-      line-height: 1.6;
-    }
-
-    .details { padding-top: 6px; }
-    .points { padding-top: 6px; }
-    .points { margin-bottom: -14px; }
-    .details { margin-bottom: -14px; }
-
-    .details > div + div,
-    .points li + li,
-    .extras > div + div { border-top: 1px solid var(--line); }
-
-    .label,
-    .points h3,
-    .extras h3 {
-      color: var(--navy);
-      font: 600 .92rem/1.5 var(--sans);
-    }
-
-    /* Employer shortcuts under the Experience title */
-    .grid { margin-top: 24px; }
-
-    .grid a {
-      display: block;
-      padding-block: 10px;
-      border-top: 1px solid var(--line);
-      text-decoration: none;
-    }
-
-    .grid strong {
-      display: block;
-      color: var(--navy);
-      font-size: .93rem;
-      font-weight: 600;
-      line-height: 1.35;
-      text-decoration-color: var(--columbia);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 4px;
-    }
-
-    .grid a:hover strong { text-decoration-line: underline; }
-    .grid span { color: var(--muted); font-size: .82rem; }
-
-    /* Additional information */
-    .extras {
-      padding: 18px 32px;
-      background: var(--tint);
-      border-radius: 4px;
-    }
-
-    .chips { display: flex; flex-wrap: wrap; }
-    .chips li:not(:last-child)::after { content: "·"; margin-inline: 8px; color: var(--muted); }
-
-    footer {
-      padding-block: 28px;
-      background: var(--navy);
-      color: var(--white);
-      font: 400 1.1rem/1.2 var(--serif);
-    }
-
-    @media (max-width: 960px) {
-      .section-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-      #experience .side { position: static; }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0 16px;
-      }
-    }
-
-    @media (max-width: 760px) {
-      :root { --gutter: 24px; }
-      .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
-      .hero-text { padding: 48px var(--gutter); }
-      .hero-photo { aspect-ratio: 988 / 1249; }
-      section { padding-block: 60px; }
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .card-head { grid-template-columns: minmax(0, 1fr); }
-      .meta { grid-column: 1; grid-row: auto; margin-top: 4px; text-align: left; }
-      .org small { white-space: normal; }
-      .details > div,
-      .points li,
-      .extras > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
-    }
-
-    @media (max-width: 520px) {
-      :root { --nav-height: 56px; --gutter: 16px; }
-      .brand { font-size: 0; }
-      .brand::after { content: "QH"; font-size: 1.2rem; }
-      .nav .wrap { gap: 8px; }
-      .nav ul { gap: 14px; }
-      .nav li a { font-size: .85rem; }
-      .card { padding: 20px 16px; }
-      .extras { padding: 10px 16px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
-    }
-
-    @media print {
-      .nav, .grid, .skip { display: none; }
-      html { scroll-padding-top: 0; }
-      .hero { min-height: 0; }
-      .card { break-inside: avoid; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#education">Skip to content</a>
@@ -365,11 +17,13 @@
   <header class="nav">
     <div class="wrap">
       <a class="brand" href="#top" aria-label="Qianhui Huang, back to top">Qianhui Huang</a>
-      <nav aria-label="Sections">
+      <nav aria-label="Site">
         <ul>
           <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#additional">Additional Info</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
         </ul>
       </nav>
     </div>
@@ -379,7 +33,7 @@
     <div class="hero">
       <div class="hero-text">
         <h1>Qianhui Huang</h1>
-        <p class="lede">Hi, I’m Qianhui. I’m studying Marketing Science at Columbia Business School, with internships at Tencent Music, Shopee, Publicis Groupe, and AstraZeneca.</p>
+        <p class="lede">Hi, I’m Qianhui. I’m studying Marketing Science at Columbia Business School, with internships at Tencent Music, Shopee, Publicis Groupe, and AstraZeneca. I’m open to relocation.</p>
         <div class="contact">
           <a class="primary" href="mailto:QHuang28@gsb.columbia.edu">QHuang28@gsb.columbia.edu</a>
           <a href="https://www.linkedin.com/in/qianhuihuang" target="_blank" rel="noopener">LinkedIn</a>
@@ -397,184 +51,212 @@
           <h2>Education</h2>
         </div>
         <div class="main">
-        <div class="edu">
           <article class="card">
-            <div class="card-head"><h3 class="org">Columbia Business School</h3>
-            <p class="role">Master of Science in Marketing Science (STEM)</p>
-            <p class="meta">New York, NY · Aug 2026 – (Expected) Dec 2027</p></div>
-            <div class="details">
-              <div>
-                <span class="label">Related Coursework</span>
-                Statistical Modeling &amp; Decision Making (PhD), Python for Data Science (PhD), Databases for Business Analytics (MBA), Digital Marketing in the AI Era (MBA), Media Planning &amp; Growth Marketing, Retail Analytics (MBA)
-              </div>
+            <div class="card-head">
+              <h3 class="org">Columbia Business School</h3>
+              <p class="role">Master of Science in Marketing Science (STEM)</p>
+              <p class="meta">New York, NY · Aug 2026 – Dec 2027</p>
             </div>
           </article>
 
           <article class="card">
-            <div class="card-head"><h3 class="org">National University of Singapore</h3>
-            <p class="role">Bachelor of Business Administration (Honours)</p>
-            <p class="meta">Singapore · Aug 2022 – Jul 2026</p></div>
+            <div class="card-head">
+              <h3 class="org">National University of Singapore</h3>
+              <p class="role">Bachelor of Business Administration (Honors)</p>
+              <p class="meta">Singapore · Aug 2022 – Jun 2026</p>
+            </div>
             <div class="details">
               <div>
-                <span class="label">Double Specializations</span>
-                Marketing, Business Analytics
-              </div>
-              <div>
-                <span class="label">Exchange Program</span>
-                Winter Exchange at Yonsei University (Korea); Winter Exchange at Shanghai Jiao Tong University (China)
-              </div>
-              <div>
-                <span class="label">Leadership</span>
-                Marketing Director, NUS Chinese Society
+                <span class="label">Specializations</span>
+                Marketing &amp; Business Analytics
               </div>
             </div>
           </article>
-        </div>
         </div>
       </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="band-tint">
       <div class="wrap section-grid">
-        <div class="side">
+        <div class="side sticky">
           <h2>Experience</h2>
           <nav class="grid" aria-label="Jump to an employer">
-          <a href="#tencent"><strong>Tencent Music</strong><span>Jul 2026 – Aug 2026</span></a>
-          <a href="#shopee"><strong>Shopee</strong><span>May 2025 – Dec 2025</span></a>
-          <a href="#publicis"><strong>Publicis Groupe</strong><span>May 2024 – Jul 2024</span></a>
-          <a href="#astrazeneca"><strong>AstraZeneca</strong><span>May 2023 – Jul 2023</span></a>
-        </nav>
+            <a href="#tencent"><strong>Tencent Music</strong><span>Jul 2026 – Aug 2026</span></a>
+            <a href="#shopee"><strong>Shopee</strong><span>May 2025 – Dec 2025</span></a>
+            <a href="#publicis"><strong>Publicis Groupe</strong><span>May 2024 – Jul 2024</span></a>
+            <a href="#astrazeneca"><strong>AstraZeneca</strong><span>May 2023 – Jul 2023</span></a>
+          </nav>
         </div>
         <div class="main">
-        
+          <article class="card" id="tencent">
+            <div class="card-head">
+              <h3 class="org">Tencent Music Entertainment Group <small>(500M+ MAUs)</small></h3>
+              <p class="role">Influencer Marketing &amp; Business Development Intern, QQ Music</p>
+              <p class="meta">Shenzhen, China · Jul 2026 – Aug 2026</p>
+            </div>
+            <ul class="points">
+              <li>
+                <h4 class="label">Influencer Marketing</h4>
+                Drove music creator acquisition for social media channels by reaching out to 300+ music influencers and screening 200+ MCN-referred candidates, redirecting 40K+ followers from other social platforms within 2 months.
+              </li>
+              <li>
+                <h4 class="label">Business Development</h4>
+                Evaluated 30+ Hong Kong business partners for large-format wrap activations with tier-1 artists (10M+ followers), built pitch decks and negotiated revenue-sharing terms, securing 2 partnerships projected at $150K+ in revenue.
+              </li>
+              <li>
+                <h4 class="label">Brand Partnership</h4>
+                Coordinated mall and IP partners on a 7-day, 4-city building-wrap advertising campaign for a gaming IP (13M+ DAU), driving 2K+ engagements, 1.5K+ badge sales, 100+ UGC posts, and 1.5M+ online and offline impressions.
+              </li>
+            </ul>
+          </article>
 
-        <article class="card job" id="tencent">
-          <div class="card-head">
-            <h3 class="org">Tencent Music Entertainment Group <small>(500M+ MAUs)</small></h3>
-            <p class="role">Influencer Marketing &amp; Business Development Intern, QQ Music</p>
-            <p class="meta">Shenzhen, China · Jul 2026 – Aug 2026</p>
-          </div>
-          <ul class="points">
-            <li>
-              <h3>Influencer Marketing</h3>
-              Drove music creator acquisition for social media channels by reaching out to 300+ music influencers and screening 200+ MCN-referred candidates, redirecting 40K+ followers from other social platforms within 2 months
-            </li>
-            <li>
-              <h3>BD</h3>
-              Evaluated 30+ Hong Kong business partners for large-format wrap activations with multinational tier-1 artists (10M+ followers), built pitch decks and negotiated revenue-sharing terms, securing 2 partnerships projected at $150K+ in revenue
-            </li>
-            <li>
-              <h3>Brand Partnership</h3>
-              Coordinated mall and IP partners on a 7-day, 4-city building wrap activation for a gaming IP (13M+ DAU), driving 2K+ engagement, 1.5K+ badge sales, 100+ UGC posts, and 1.5M+ online and offline impressions
-            </li>
-          </ul>
-        </article>
+          <article class="card" id="shopee">
+            <div class="card-head">
+              <h3 class="org">Shopee</h3>
+              <p class="role">Strategy &amp; Planning Intern (Digital Marketing Analytics)</p>
+              <p class="meta">Singapore · May 2025 – Dec 2025</p>
+            </div>
+            <ul class="points">
+              <li>
+                <h4 class="label">Budget Optimization</h4>
+                Analyzed install volume, CPI, and growth opportunities across 6 international markets, identifying underinvested segments to inform cross-market budget reallocation and drive an 8% increase in installs at flat spend.
+              </li>
+              <li>
+                <h4 class="label">User Acquisition</h4>
+                Managed paid user acquisition across channels including Google, paid social (Meta, TikTok, Pinterest), App Store (Apple Search Ads), for 6 international markets with $1M+ in monthly ad spend, reducing CAC by 15%.
+              </li>
+              <li>
+                <h4 class="label">Dashboard Building</h4>
+                Monitored and analyzed performance of all 12 markets by building Tableau dashboards covering focused business lines (market pacing and performance, ROAS breakdown, Apple Store), tracking CPM, CPC, CTR, CVR, GMV, ROAS, CAC, and automated data updates to cut manual reporting time by 90%.
+              </li>
+              <li>
+                <h4 class="label">Performance Analytics</h4>
+                Diagnosed performance of shopping festival campaigns (Black Friday) across 3 markets via channel breakdowns and platform changes, reporting findings to local teams to guide campaign restructuring and budget reallocation.
+              </li>
+            </ul>
+          </article>
 
-        <article class="card job" id="shopee">
-          <div class="card-head">
-            <h3 class="org">Shopee</h3>
-            <p class="role">Strategy &amp; Planning Intern, Digital Marketing</p>
-            <p class="meta">Singapore · May 2025 – Dec 2025</p>
-          </div>
-          <ul class="points">
-            <li>
-              <h3>User Acquisition</h3>
-              Managed paid user acquisition across channels including Google, Paid social (Meta, TikTok, Pinterest), App Store (ASA, UAC), for 6 international markets with $1M+ in monthly ad spend, reducing CAC by 15%
-            </li>
-            <li>
-              <h3>Dashboard Building</h3>
-              Monitored and analyzed performance of all 12 markets by building dashboards covering focused business lines (market pacing and performance, ROAS breakdown, Apple Store), tracking Traffic side (Impression, CPM, Click, CPC, CTR), conversion side (GMV, Purchase, CVR, AOV), Efficiency (ROAS), User side (Daily New User, Daily New Customer, CAC), and automated data updates to cut manual reporting time by 90%
-            </li>
-            <li>
-              <h3>Budget Reallocation</h3>
-              Quantified iOS install volume and acquisition cost across 6 international markets with high penetration of older iOS models, sizing incremental iOS spend opportunities to guide a budget reallocation that lifted installs 8% at flat spend
-            </li>
-            <li>
-              <h3>Strategy &amp; Planning</h3>
-              Projected KPI targets and performance benchmarks for shopping festival campaigns (Black Friday) across 6 markets based on planned budget, prior campaign results, market dynamics, and local teams’ campaign strategies
-            </li>
-          </ul>
-        </article>
+          <article class="card" id="publicis">
+            <div class="card-head">
+              <h3 class="org">Publicis Groupe</h3>
+              <p class="role">Strategic Planning Intern (Media &amp; Campaign Analytics) · Client: Uniqlo</p>
+              <p class="meta">Shanghai, China · May 2024 – Jul 2024</p>
+            </div>
+            <ul class="points">
+              <li>
+                <h4 class="label">Competitive Analysis</h4>
+                Conducted pre-launch research on market conditions, audience purchase behavior, and social ad formats of 3 major competitors, defining target audience segments and a social media channel mix for campaign launch.
+              </li>
+              <li>
+                <h4 class="label">Campaign Attribution</h4>
+                Led a post-buy analysis diagnosing a spring campaign’s performance fluctuation against prior-year timelines and seasonality data, attributing the gap to launch timing and informing the brand’s future seasonal launch planning.
+              </li>
+              <li>
+                <h4 class="label">Paid Media Optimization</h4>
+                Optimized daily spend across 5 campaigns by tracking CPM, CPC, and conversion performance in Power BI and other ad measurement platforms, flagging underperforming placements and guiding weekly spend reallocation.
+              </li>
+            </ul>
+          </article>
 
-        <article class="card job" id="publicis">
-          <div class="card-head">
-            <h3 class="org">Publicis Groupe</h3>
-            <p class="role">Strategic Planning Intern, Uniqlo</p>
-            <p class="meta">Shanghai, China · May 2024 – Jul 2024</p>
-          </div>
-          <ul class="points">
-            <li>
-              <h3>Media Planning</h3>
-              Assessed 57 LED placements across 7 cities on cost, foot traffic, CPM, and proximity to 300+ stores, consolidating a $2M+ media option pool for fall denim, and developed online-offline creative concepts for a summer pop-up
-            </li>
-            <li>
-              <h3>Competitive Analysis</h3>
-              Conducted pre-launch research on market conditions, audience purchase behavior, and social ad formats of 3 major competitors, defining target audience segments and a channel mix across different social media for campaign launch
-            </li>
-            <li>
-              <h3>Campaign Attribution</h3>
-              Led a post-buy analysis diagnosing a spring campaign’s performance fluctuation against prior-year timelines and seasonality data, attributing the gap to launch timing and informing the brand’s future seasonal launch planning
-            </li>
-            <li>
-              <h3>Paid Media Optimization</h3>
-              Optimized daily spend across 5 campaigns by tracking CPM, CPC, and conversion performance in Power BI and other ad measurement platforms, flagging underperforming placements and guiding weekly spend reallocation
-            </li>
-          </ul>
-        </article>
-
-        <article class="card job" id="astrazeneca">
-          <div class="card-head">
-            <h3 class="org">AstraZeneca</h3>
-            <p class="role">Marketing Intern</p>
-            <p class="meta">Shanghai, China · May 2023 – Jul 2023</p>
-          </div>
-          <ul class="points">
-            <li>
-              <h3>Performance Analytics</h3>
-              Decomposed weekly Forxiga sales across China into a 4-level regional breakdown with MoM/YoY comparisons and investigated root causes with regional managers, lifting sales in underperforming areas 6% MoM
-            </li>
-            <li>
-              <h3>Data Analysis &amp; Visualization</h3>
-              Informed a physician-facing campaign by analyzing Forxiga’s market share across 9 diabetes drug classes, consolidating in-market product data into pivot-based charts to visualize share trends and pinpoint share shifts
-            </li>
-          </ul>
-        </article>
+          <article class="card" id="astrazeneca">
+            <div class="card-head">
+              <h3 class="org">AstraZeneca</h3>
+              <p class="role">Marketing Analytics Intern</p>
+              <p class="meta">Shanghai, China · May 2023 – Jul 2023</p>
+            </div>
+            <ul class="points">
+              <li>
+                <h4 class="label">Sales Analytics</h4>
+                Decomposed weekly Forxiga sales across China into a 4-level regional breakdown with MoM/YoY comparisons and investigated root causes with regional managers, lifting sales in underperforming areas by 6% MoM.
+              </li>
+              <li>
+                <h4 class="label">Data Analysis &amp; Visualization</h4>
+                Informed a physician-facing campaign by analyzing Forxiga’s market share across 9 diabetes drug classes, consolidating in-market product data into pivot-based charts to visualize share trends and pinpoint share shifts.
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="additional">
+    <section id="projects">
       <div class="wrap section-grid">
         <div class="side">
-          <h2>Additional Information</h2>
+          <h2>Projects</h2>
+          <a class="card-link" href="portfolio.html">See the full portfolio →</a>
         </div>
         <div class="main">
-        <div class="extras">
-          <div>
-            <h3>Technical Skills</h3>
-            <ul class="chips">
-              <li>Excel</li><li>Python</li><li>R</li><li>SQL</li><li>Tableau</li><li>Canva</li><li>Photoshop</li><li>Video Editing</li>
+          <article class="card">
+            <div class="card-head">
+              <h3 class="org">Marketing Performance Analytics &amp; Optimization</h3>
+              <p class="meta">Sep 2026 – Oct 2026</p>
+            </div>
+            <ul class="points">
+              <li>
+                <h4 class="label">Funnel Analysis</h4>
+                Analyzed 40K+ campaign records across 3 markets, decomposing ROAS changes into CPM, CTR, CVR, and AOV to identify key performance drivers.
+              </li>
+              <li>
+                <h4 class="label">SQL &amp; Power BI</h4>
+                Extracted marketing data using SQL and built an interactive Power BI dashboard via AI Agent tracking 8+ KPIs, enabling performance monitoring across campaigns and markets.
+              </li>
+              <li>
+                <h4 class="label">A/B Testing</h4>
+                Designed and analyzed simulated A/B tests, calculating conversion lift, statistical significance, and 95% confidence intervals to evaluate hypothetical launch decisions.
+              </li>
+              <li>
+                <h4 class="label">Budget Optimization</h4>
+                Developed a budget allocation model across 3 markets, evaluating marginal ROAS and 3 forecast scenarios to recommend investments and communicate projected business impact.
+              </li>
             </ul>
-          </div>
-          <div>
-            <h3>Soft Skills</h3>
-            <ul class="chips">
-              <li>Cross-Functional Collaboration</li><li>Communication Skills</li><li>Analytical Thinking</li><li>Attention to Detail</li><li>Results Orientation</li>
+            <a class="card-link" href="projects/marketing-performance-analytics.html">View project →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <h3 class="org">Client Consulting &amp; Growth Strategy</h3>
+              <p class="meta">Aug 2025 – Nov 2025</p>
+            </div>
+            <ul class="points">
+              <li>
+                <h4 class="label">Client Research</h4>
+                Surveyed founders for a Singapore foodtech accelerator, reaching out to 300+ and analyzing 40 responses to identify commercialization barriers, funding constraints, and operational pain points, defining the client’s core growth challenges
+              </li>
+              <li>
+                <h4 class="label">Strategic Recommendations</h4>
+                Synthesized findings into real-time dashboards and stakeholder-ready insights, presenting recommendations directly to the CEO, including a tiered membership model and value proposition refinements
+              </li>
             </ul>
-          </div>
-          <div>
-            <h3>Certifications</h3>
-            <ul class="chips">
-              <li>Google Ads Search Certification</li><li>Google Analytics Certification</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Interest</h3>
-            <ul class="chips">
-              <li>Pilates</li><li>Piano &amp; Electone</li><li>Tarot</li>
-            </ul>
-          </div>
+            <a class="card-link" href="projects/client-consulting-growth-strategy.html">View project →</a>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section id="skills" class="band-tint">
+      <div class="wrap section-grid">
+        <div class="side">
+          <h2>Skills &amp; Certifications</h2>
+        </div>
+        <div class="main">
+          <div class="extras">
+            <div>
+              <h3>Technical Skills</h3>
+              <ul class="chips">
+                <li>Excel (Pivot Tables, VLOOKUP, Macros)</li><li>Google Sheets</li><li>Python</li><li>R</li><li>SQL</li><li>Tableau</li><li>Power BI</li><li>AI Tools</li><li>ROI Analysis</li><li>Executive Reporting</li><li>Go-to-Market (GTM) Strategy</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Certifications</h3>
+              <p>Google Ads Search &amp; Google Analytics Certified (GA4)</p>
+            </div>
+            <div>
+              <h3>Soft Skills</h3>
+              <ul class="chips">
+                <li>Cross-Functional Collaboration</li><li>Communication Skills</li><li>Analytical Thinking</li><li>Problem-Solving Skills</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
